@@ -1,0 +1,13 @@
+.inputField{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rebeccapurple;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 0px 5px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+}
+
+.inputField:focus{
+    outline: none;
+}
