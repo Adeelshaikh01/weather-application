@@ -2,12 +2,11 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import Search from './components/search/index.js';
 import Button from './components/button/index.js';
-import rain from './assets/images/rain.png';
-import clouds from './assets/images/clouds.png';
-import sun from './assets/images/sun.png';
-import smoke from './assets/images/smoke.png'
-import haze from './assets/images/haze.png'
-
+import rain from './assets/images/rain.svg';
+import clouds from './assets/images/cloudy.svg';
+import sun from './assets/images/clear-day.svg';
+import smoke from './assets/images/smoke.svg';
+import haze from './assets/images/haze.svg';
 
 function App() {
   const [data, dataWeather] = useState({})
@@ -61,9 +60,11 @@ return (
             placeholder="Enter City Name" />
           <Button className="searchBtn" onClick={manualLocation}>Search</Button>
         </div>
+        <div className="headerSection">
         <h1>{name || "Not found"}</h1>
         <img className="weatherIcon" src={`${weather === "Clear" ? sun : weather === "Clouds" ? clouds : weather === "Smoke" ?
           smoke : weather === "Rain" ? rain : weather === "Haze" ? haze : ""}`} alt="" />
+        </div>
         <ul>
           <li className={themeClass(weather)}>Temperature: {Math.floor(main?.temp) || "not found"}</li>
           <li className={themeClass(weather)}>Humidity: {Math.floor(main?.humidity) || "not found"}</li>
